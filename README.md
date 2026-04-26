@@ -76,39 +76,3 @@ Ensure you have Python 3.9+ installed.
 2. **Configure Environment:**
    Update your `.env` file with your `GEMINI_API_KEY` and `OCR_SPACE_API_KEY`.
 
-## Usage
-
-The system is designed around the LangGraph orchestration in `core.graph`.
-
-To initialize the database and run a test pipeline:
-```python
-from core.database import init_db
-from core.graph import run_pipeline
-
-# 1. Initialize DB
-init_db()
-
-# 2. Define the initial state (simulating a request)
-state = {
-    "customer_id": "CUST-1001",
-    "customer_name": "John Doe",
-    "change_type": "Address Change",
-    "old_value": "123 Old Street, City",
-    "new_value": "456 New Avenue, City",
-    "file_bytes": b"fake_image_data_here",
-    "created_by": "API_Client"
-}
-
-# 3. Execute the pipeline
-result = run_pipeline(state)
-
-print(f"Confidence: {result['percentage']}%")
-print(f"Status: {result['status']}")
-print(f"Summary: {result['summary']}")
-```
-
-For more detailed testing, run the existing test scripts:
-```bash
-python test_pipeline.py
-python test_all_change_types.py
-```
