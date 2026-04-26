@@ -1,5 +1,1 @@
 .env
-iasw.db
-__pycache__/
-*.pyc
-.streamlit/
