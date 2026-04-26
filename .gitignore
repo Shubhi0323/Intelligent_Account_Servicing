@@ -1,0 +1,6 @@
+.env
+iasw.db
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.streamlit/
